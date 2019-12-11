@@ -27,6 +27,7 @@ async function getBook(request){
       .then(body => {
           let book = {}
           book.title = getHeader(body);
+          console.log(book.title)
           book.text =  body.slice(0,size);
           jsonBook = JSON.stringify(book);
           fetch(`${url}`,{
