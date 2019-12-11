@@ -9,7 +9,8 @@ const url = process.env.URL;
 
   console.log("Project Parakeet, Let's get your request!");
   for (var i =0;i<batchsize;i++){
-    getBook(`http://www.gutenberg.org/cache/epub/${startingnumber+i}/pg${startingnumber + i}.txt`);
+      var bookNumber = startingnumber+i
+    getBook(`http://www.gutenberg.org/cache/epub/${bookNumber}/pg${bookNumber}.txt`);
   }
 
 function getHeader(body){
