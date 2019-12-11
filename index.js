@@ -8,7 +8,9 @@ const batchsize = process.env.BATCHSIZE;
 const url = process.env.URL;
 
   console.log("Project Parakeet, Let's get your request!");
-  getBook(`http://www.gutenberg.org/cache/epub/${startingnumber}/pg${batchsize}.txt`);
+  for (var i =0;i<batchsize;i++){
+    getBook(`http://www.gutenberg.org/cache/epub/${startingnumber+i}/pg${startingnumber + i}.txt`);
+  }
 
 function getHeader(body){
   var array = body.split("\r\n");
